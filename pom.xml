@@ -19,7 +19,7 @@
             <name>Michael Hunger</name>
         </developer>
     </developers>
-	
+
     <url>https://github.com/neo4j-contrib/neo4j-spark-connector</url>
     <scm>
         <url>https://github.com/neo4j-contrib/neo4j-spark-connector</url>
@@ -44,6 +44,8 @@
         <driver.version>1.7.5</driver.version>
         <spark.version>2.4.0</spark.version>
         <graphframes.version>0.7.0-spark2.4-s_2.11</graphframes.version>
+        <!--编译编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
@@ -57,41 +59,41 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>4.3.0</version>
-                <executions>
-                    <execution>
-                        <id>scala-compile</id>
-                        <goals>
-                            <goal>add-source</goal>
-                            <goal>compile</goal>
-                        </goals>
-                        <phase>process-resources</phase>
-                    </execution>
-                    <execution>
-                        <id>scala-test-compile</id>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                        <phase>test-compile</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <scalaVersion>${project.scala.version}</scalaVersion>
-                    <scalaCompatVersion>${project.scala.binary.version}</scalaCompatVersion>
-                    <args>
-                        <arg>-Xmax-classfile-name</arg>
-                        <arg>100</arg>
-                        <!-- arg>-deprecation</arg -->
-                    </args>
-                    <jvmArgs>
-                        <jvmArg>-Xms64m</jvmArg>
-                        <jvmArg>-Xmx1024m</jvmArg>
-                    </jvmArgs>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>net.alchim31.maven</groupId>-->
+<!--                <artifactId>scala-maven-plugin</artifactId>-->
+<!--                <version>4.3.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>scala-compile</id>-->
+<!--                        <goals>-->
+<!--                            <goal>add-source</goal>-->
+<!--                            <goal>compile</goal>-->
+<!--                        </goals>-->
+<!--                        <phase>process-resources</phase>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>scala-test-compile</id>-->
+<!--                        <goals>-->
+<!--                            <goal>testCompile</goal>-->
+<!--                        </goals>-->
+<!--                        <phase>test-compile</phase>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <scalaVersion>${project.scala.version}</scalaVersion>-->
+<!--                    <scalaCompatVersion>${project.scala.binary.version}</scalaCompatVersion>-->
+<!--                    <args>-->
+<!--                        <arg>-Xmax-classfile-name</arg>-->
+<!--                        <arg>100</arg>-->
+<!--                        &lt;!&ndash; arg>-deprecation</arg &ndash;&gt;-->
+<!--                    </args>-->
+<!--                    <jvmArgs>-->
+<!--                        <jvmArg>-Xms64m</jvmArg>-->
+<!--                        <jvmArg>-Xmx1024m</jvmArg>-->
+<!--                    </jvmArgs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
@@ -110,19 +112,6 @@
                     <finalName>${project.artifactId}-full-${project.version}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -213,6 +202,12 @@
             <artifactId>neo4j-harness</artifactId>
             <version>${neo4j.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.alchim31.maven</groupId>
+            <artifactId>scala-maven-plugin</artifactId>
+            <version>4.3.0</version>
         </dependency>
     </dependencies>
 
