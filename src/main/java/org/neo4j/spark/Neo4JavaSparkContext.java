@@ -3,11 +3,9 @@ package org.neo4j.spark;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
 import org.neo4j.spark.dataframe.Neo4jDataFrame;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 

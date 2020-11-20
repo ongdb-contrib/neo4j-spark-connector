@@ -4,7 +4,6 @@ import java.util
 
 import org.apache.spark.SparkContext
 import org.apache.spark.api.java.JavaRDD
-import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SQLContext
 import org.neo4j.spark.dataframe.Neo4jDataFrame
 import org.neo4j.spark.rdd.{Neo4jRowRDD, Neo4jTupleRDD}
