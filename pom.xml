@@ -59,41 +59,41 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>net.alchim31.maven</groupId>-->
-<!--                <artifactId>scala-maven-plugin</artifactId>-->
-<!--                <version>4.3.0</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>scala-compile</id>-->
-<!--                        <goals>-->
-<!--                            <goal>add-source</goal>-->
-<!--                            <goal>compile</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>process-resources</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>scala-test-compile</id>-->
-<!--                        <goals>-->
-<!--                            <goal>testCompile</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>test-compile</phase>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <scalaVersion>${project.scala.version}</scalaVersion>-->
-<!--                    <scalaCompatVersion>${project.scala.binary.version}</scalaCompatVersion>-->
-<!--                    <args>-->
-<!--                        <arg>-Xmax-classfile-name</arg>-->
-<!--                        <arg>100</arg>-->
-<!--                        &lt;!&ndash; arg>-deprecation</arg &ndash;&gt;-->
-<!--                    </args>-->
-<!--                    <jvmArgs>-->
-<!--                        <jvmArg>-Xms64m</jvmArg>-->
-<!--                        <jvmArg>-Xmx1024m</jvmArg>-->
-<!--                    </jvmArgs>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <executions>
+                    <execution>
+                        <id>scala-compile</id>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${project.scala.version}</scalaVersion>
+                    <scalaCompatVersion>${project.scala.binary.version}</scalaCompatVersion>
+                    <args>
+                        <arg>-Xmax-classfile-name</arg>
+                        <arg>100</arg>
+                        <!-- arg>-deprecation</arg -->
+                    </args>
+                    <jvmArgs>
+                        <jvmArg>-Xms64m</jvmArg>
+                        <jvmArg>-Xmx1024m</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
