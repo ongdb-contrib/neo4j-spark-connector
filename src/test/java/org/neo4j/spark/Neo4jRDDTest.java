@@ -6,12 +6,8 @@ import org.apache.spark.sql.Row;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.neo4j.graphdb.factory.GraphDatabaseSettings;
 import org.neo4j.harness.ServerControls;
 import org.neo4j.harness.TestServerBuilders;
-import scala.Tuple2;
-import scala.collection.Iterator;
-import scala.collection.Seq;
 
 import java.util.Collections;
 import java.util.List;

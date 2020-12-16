@@ -3,6 +3,7 @@ package org.neo4j.spark;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
 import org.neo4j.spark.dataframe.Neo4jDataFrame;
@@ -40,7 +41,9 @@ public class Neo4JavaSparkContext {
     }
 
     public Dataset<Row> queryDF(final String query, final Map<String,Object> parameters, String...resultSchema) {
-        if (resultSchema.length %2 != 0) throw new RuntimeException("Schema information has to be supplied as pairs of columnName,cypherTypeName (INTEGER,FLOAT,BOOLEAN,STRING,NULL)");
+        if (resultSchema.length %2 != 0) {
+            throw new RuntimeException("Schema information has to be supplied as pairs of columnName,cypherTypeName (INTEGER,FLOAT,BOOLEAN,STRING,NULL)");
+        }
         int entries = resultSchema.length / 2;
         Map<String,String> schema = new LinkedHashMap<String,String>(entries);
         for (int i = 0; i < entries; i++) {

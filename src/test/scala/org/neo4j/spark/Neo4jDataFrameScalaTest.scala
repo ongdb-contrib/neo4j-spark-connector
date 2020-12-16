@@ -1,8 +1,6 @@
 package org.neo4j.spark
 
 import org.apache.spark.api.java.JavaSparkContext
-import org.apache.spark.graphx.{Edge, Graph}
-import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types.{DataType, DataTypes, StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -11,8 +9,6 @@ import org.junit._
 import org.neo4j.graphdb.ResourceIterator
 import org.neo4j.harness.{ServerControls, TestServerBuilders}
 import org.neo4j.spark.dataframe.Neo4jDataFrame
-
-import scala.collection.JavaConverters._
 
 
 /**

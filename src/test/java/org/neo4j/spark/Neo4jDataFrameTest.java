@@ -7,7 +7,6 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.types.StructType;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.neo4j.harness.ServerControls;
 import org.neo4j.harness.TestServerBuilders;
@@ -57,33 +56,33 @@ public class Neo4jDataFrameTest {
 
     @Test
     public void runMatrixQueryDFSchema() {
-//        Dataset<Row> found = csc.queryDF(QUERY, PARAMS,"released", "integer","tagline", "string");
-//        assertEquals(1, found.count());
-//        StructType schema = found.schema();
-//        assertEquals("long", schema.apply("released").dataType().typeName());
-//        assertEquals("string", schema.apply("tagline").dataType().typeName());
-//
-//        Row row = found.first();
-//
-//        assertEquals(2, row.size());
-//        assertEquals(1999L, row.getLong(0));
-//        assertEquals("Welcome to the Real World", row.getString(1));
+        Dataset<Row> found = csc.queryDF(QUERY, PARAMS,"released", "integer","tagline", "string");
+        assertEquals(1, found.count());
+        StructType schema = found.schema();
+        assertEquals("long", schema.apply("released").dataType().typeName());
+        assertEquals("string", schema.apply("tagline").dataType().typeName());
+
+        Row row = found.first();
+
+        assertEquals(2, row.size());
+        assertEquals(1999L, row.getLong(0));
+        assertEquals("Welcome to the Real World", row.getString(1));
     }
 
     @Test
     // @Ignore("todo result & session not serializable for CypherResultRDD")
     public void runMatrixQueryDF() {
-//        Dataset<Row> found = csc.queryDF(QUERY, PARAMS);
-//        assertEquals(1, found.count());
-//        StructType schema = found.schema();
-//        assertEquals("long", schema.apply("released").dataType().typeName());
-//        assertEquals("string", schema.apply("tagline").dataType().typeName());
-//
-//        Row row = found.first();
-//
-//        assertEquals(2, row.size());
-//        assertEquals(1999L, row.getLong(0));
-//        assertEquals("Welcome to the Real World", row.getString(1));
+        Dataset<Row> found = csc.queryDF(QUERY, PARAMS);
+        assertEquals(1, found.count());
+        StructType schema = found.schema();
+        assertEquals("long", schema.apply("released").dataType().typeName());
+        assertEquals("string", schema.apply("tagline").dataType().typeName());
+
+        Row row = found.first();
+
+        assertEquals(2, row.size());
+        assertEquals(1999L, row.getLong(0));
+        assertEquals("Welcome to the Real World", row.getString(1));
     }
 
 }

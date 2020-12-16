@@ -9,7 +9,6 @@ import org.junit.Assert._
 import org.junit._
 import org.neo4j.harness.{ServerControls, TestServerBuilders}
 
-
 /**
   * @author mh
   * @since 17.07.16

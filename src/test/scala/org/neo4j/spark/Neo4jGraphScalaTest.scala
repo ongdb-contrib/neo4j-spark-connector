@@ -10,7 +10,6 @@ import org.neo4j.harness.{ServerControls, TestServerBuilders}
 
 import scala.collection.JavaConverters._
 
-
 /**
   * @author mh
   * @since 17.07.16
